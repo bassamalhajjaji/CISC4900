@@ -1,0 +1,12 @@
+{
+  "name": "RetailFlow",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "cd server && npm install",
+  "portsAttributes": {
+    "3000": { "label": "API", "onAutoForward": "openBrowser" }
+  },
+  "forwardPorts": [3000]
+}
