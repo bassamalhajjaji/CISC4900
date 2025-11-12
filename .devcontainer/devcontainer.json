@@ -1,12 +1,21 @@
 {
   "name": "RetailFlow",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "overrideCommand": false,
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "postCreateCommand": "cd server && npm install",
-  "portsAttributes": {
-    "3000": { "label": "API", "onAutoForward": "openBrowser" }
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shellIntegration.enabled": true
+      }
+    }
   },
-  "forwardPorts": [3000]
+  "postCreateCommand": "cd server && npm install",
+  "forwardPorts": [3000, 3306],
+  "portsAttributes": {
+    "3000": { "label": "API", "onAutoForward": "openBrowser" },
+    "3306": { "label": "MySQL" }
+  }
 }
