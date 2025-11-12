@@ -1,17 +1,7 @@
 {
-  "name": "RetailFlow",
+  "name": "RetailFlow (Plain Node)",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "overrideCommand": false,
-  "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "terminal.integrated.shellIntegration.enabled": true
-      }
-    }
-  },
   "postCreateCommand": "cd server && npm install",
   "forwardPorts": [3000, 3306],
   "portsAttributes": {
