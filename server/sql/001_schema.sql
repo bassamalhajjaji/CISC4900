@@ -100,8 +100,8 @@ FROM products p
 JOIN stock_levels s ON s.product_id = p.product_id
 WHERE s.qty_on_hand <= p.reorder_level;
 
-CREATE INDEX IF NOT EXISTS idx_products_name ON products(name);
-CREATE INDEX IF NOT EXISTS idx_products_category ON products(category_id);
-CREATE INDEX IF NOT EXISTS idx_stock_levels_qty ON stock_levels(qty_on_hand);
-CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at);
-CREATE INDEX IF NOT EXISTS idx_order_items_prod ON order_items(product_id);
+CREATE INDEX idx_products_name      ON products(name);
+CREATE INDEX idx_products_category  ON products(category_id);
+CREATE INDEX idx_stock_levels_qty   ON stock_levels(qty_on_hand);
+CREATE INDEX idx_orders_created     ON orders(created_at);
+CREATE INDEX idx_order_items_prod   ON order_items(product_id);
